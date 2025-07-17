@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-multipart
+PyMuPDF
+openai
+pinecone-client
+sqlalchemy
+psycopg2-binary
+langchain
+tiktoken
