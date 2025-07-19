@@ -1,6 +1,6 @@
 from langchain.text_splitter import CharacterTextSplitter
 
-def semantic_chunk(text):
+def semantic_paragraph_chunk(text):
     splitter = CharacterTextSplitter(
         separator="\n\n", 
         chunk_size=500,
