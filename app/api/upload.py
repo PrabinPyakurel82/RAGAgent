@@ -8,9 +8,7 @@ from sqlalchemy.orm import Session
 from app.core.database import get_db
 from app.core.models import UploadedFile
 from app.utils.file_utils import extract_text_from_pdf,extract_text_from_txt
-from app.chunking.recursive_chunking import recursive_chunk
-from app.chunking.semantic_paragraph_chunking import semantic_paragraph_chunk
-from app.chunking.semantic_sentence_chunking import  semantic_sentence_chunk
+from app.chunking.chunking_strategies import recursive_chunk,semantic_paragraph_chunk,semantic_sentence_chunk
 from app.embeddings.embedding_models import get_embedding
 from app.vectorstore.pinecone_store import upsert_to_pinecone
 
