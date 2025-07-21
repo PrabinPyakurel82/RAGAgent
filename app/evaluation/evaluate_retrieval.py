@@ -63,6 +63,7 @@ def evaluate(file_path: str, test_query: str):
                 continue
 
             top_chunk = results_from_query[0][1]
+            top_chunk_score = results_from_query[0][0]
 
             print(f"\n[{file_path}] Strategy: {strategy_name}, Model: {model_name}")
             print("Top Match:", top_chunk[:200], "...")
@@ -74,6 +75,7 @@ def evaluate(file_path: str, test_query: str):
                 "model": model_name,
                 "latency": latency,
                 "top_chunk": top_chunk,
+                "score":top_chunk_score,
                 "retrieved": True
             })
 
@@ -81,7 +83,7 @@ def evaluate(file_path: str, test_query: str):
 
 
 def export_results_to_csv(results, csv_file="evaluation_results.csv"):
-    fieldnames = ["file", "strategy", "model", "latency", "top_chunk", "retrieved"]
+    fieldnames = ["file", "strategy", "model", "latency","top_chunk","score","retrieved"]
 
     with open(csv_file, mode='w', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
