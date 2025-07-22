@@ -18,12 +18,11 @@ def upsert_to_pinecone(embeddings,metadata_list):
     index.upsert(vectors)
 
 
-def query_pinecone(query_embedding: list,file_path, top_k: int = 5):
+def query_pinecone(query_embedding: list, top_k: int = 5):
     response = index.query(
         vector=query_embedding,
         top_k=top_k,
         include_metadata=True,
-         filter={"file_id": file_path}
     )
 
     results = []

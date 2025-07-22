@@ -46,7 +46,7 @@ def evaluate(file_path: str, test_query: str):
             test_query_embedding = get_embedding(test_query, model_name=model_name)
 
             start_time = time.time()
-            results_from_query = query_pinecone(test_query_embedding,file_path)
+            results_from_query = query_pinecone(test_query_embedding)
             end_time = time.time()
             latency = round(end_time - start_time, 3)
 
@@ -70,7 +70,6 @@ def evaluate(file_path: str, test_query: str):
             print("Latency:", latency, "sec")
 
             results.append({
-                "file": file_path,
                 "strategy": strategy_name,
                 "model": model_name,
                 "latency": latency,
@@ -83,7 +82,7 @@ def evaluate(file_path: str, test_query: str):
 
 
 def export_results_to_csv(results, csv_file="evaluation_results.csv"):
-    fieldnames = ["file", "strategy", "model", "latency","top_chunk","score","retrieved"]
+    fieldnames = ["strategy", "model", "latency","top_chunk","score","retrieved"]
 
     with open(csv_file, mode='w', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
