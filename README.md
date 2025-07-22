@@ -128,10 +128,9 @@ curl -X 'POST' \
 - **Method**: `POST`
 - **Input**: `session_id` and `query`
 - **Process**:
-  - Converts query itno embedding
-  - Search the vectore_store for related chunks
-  - Answers based on chunks retrieved 
-  - Saves the session into redis
+  - Creates a new booking
+  - Saves the booking into database
+  - Sends confirmation email
 
 - **Sample Request**:
 ```bash
