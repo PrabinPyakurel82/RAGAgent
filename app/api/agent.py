@@ -1,4 +1,5 @@
 from fastapi.routing import APIRouter
+from fastapi import Form
 from pydantic import BaseModel
 
 from app.agent.rag_agent import get_agent
@@ -10,7 +11,7 @@ class QueryRequest(BaseModel):
     question: str
 
 @router.post("/agent/")
-def query_agent(request:QueryRequest):
+def query_agent(request:QueryRequest=Form(...)):
     agent = get_agent(session_id=request.session_id)
     answer = agent.invoke(request.question)
     return {"answer":answer}
