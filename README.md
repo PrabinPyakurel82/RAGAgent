@@ -1,4 +1,4 @@
-# 🔍 Agentic RAG System with File Upload & Interview Booking API
+# Agentic RAG System with File Upload & Interview Booking API
 
 ##  Overview
 
@@ -26,7 +26,7 @@ This backend system provides:
 
 ---
 
-## ⚙️ API Endpoints
+## API Endpoints
 
 ### 1. `/api/upload` — File Upload and Vectorization
 
