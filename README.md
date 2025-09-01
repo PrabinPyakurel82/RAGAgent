@@ -8,8 +8,7 @@ This backend system provides:
    Upload `.pdf` or `.txt` files, extract and chunk text using various strategies, generate embeddings using multiple models, and store them in a vector database (Pinecone). Metadata is saved in a relational database (PostgreSQL).
 
 2. **Agentic RAG API**  
-   A conversational agent powered by LangChain, supporting memory via Redis. This agent answers user queries using chunk-retrieval tools. It also supports interview booking and email confirmation.
-
+   A conversational agent powered by LangChain, supporting memory via Redis. This agent answers user queries using chunk-retrieval tools. 
 ---
 
 ##  Tech Stack
