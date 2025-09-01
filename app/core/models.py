@@ -11,11 +11,3 @@ class UploadedFile(Base):
     embedding_model = Column(String)
     chunking_strategy = Column(String)
     created_at = Column(DateTime, default=datetime.now)
-
-
-class Booking(Base):
-    __tablename__ = "booking"
-    id = Column(Integer,primary_key= True,index=True)
-    full_name = Column(String)
-    email = Column(String,nullable=False)
-    timestamp = Column(DateTime)

@@ -10,6 +10,7 @@ def get_memory(session_id:str):
     memory = ConversationBufferMemory(
         chat_memory=message_history,
         return_messages=True,
-        memory_key='chat_history'
+        memory_key='chat_history',
+        include_tool_calls=True
     )
     return memory

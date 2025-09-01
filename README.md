@@ -1,4 +1,4 @@
-# Agentic RAG System with File Upload & Interview Booking API
+# Agentic RAG System
 
 ##  Overview
 
@@ -22,8 +22,6 @@ This backend system provides:
 | Chunking      | Recursive, Semantic (Sentence/Paragraph)    |
 | Database      | PostgreSQL (metadata), Redis (memory)       |
 | Agent         | LangChain Agent (zero-shot-react)           |
-| Email         | SMTP (simple email confirmation)            |
-
 ---
 
 ## API Endpoints
@@ -120,32 +118,6 @@ curl -X 'POST' \
     ],
     "output": "AI is replacing some jobs through automation, but it is also creating new jobs and redefining existing ones, leading to a complex and evolving job market."
   }
-}
-```
-
-### 3. `/api/booking` — Interview Booking
-
-- **Method**: `POST`
-- **Input**: `session_id` and `query`
-- **Process**:
-  - Converts query itno embedding
-  - Search the vectore_store for related chunks
-  - Answers based on chunks retrieved 
-  - Saves the session into redis
-
-- **Sample Request**:
-```bash
-curl -X 'POST' \
-  'http://127.0.0.1:8000/api/booking/' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d 'full_name=Prabin%20Pyakurel&email=prabinpyakurel82%40gmail.com&timestamp=2025-07-22T12%3A51%3A52.484Z'
-```
-- **Sample Response**
-```json
-{
-  "status": "success",
-  "message": "Booking confirmed and email sent."
 }
 ```
   
